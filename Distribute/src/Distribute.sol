@@ -8,10 +8,21 @@ contract Distribute {
            array of addresses that is passed as argument.
         2. Write your code in the `distributeEther` function.
     */
-
-    constructor() payable {}
+    address[] distributers;
+    uint value;
+    constructor(
+        uint value,
+        address[] memory lol
+    ) payable {
+        distributers=lol;
+        value=msg.value;
+    }
 
     function distributeEther(address[] memory addresses) public {
-        // your code here
+        uint value=address(this).balance;
+        uint value_per=value/distributers.length;
+        for(uint i=0;i<distributers.length;i++){
+            payable(address(distributers[i])).transfer(value_per);
+        }
     }
 }

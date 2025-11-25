@@ -7,8 +7,8 @@ contract Emitter {
         2. Emit the event in the emitEvent function below
         3. The name of the event must be `Trigger`
     */
-
+    event Trigger(address x,uint256 y);
     function emitEvent(address _addr, uint256 _num) public {
-        // your code here
+        emit Trigger(_addr, _num);
     }
 }
