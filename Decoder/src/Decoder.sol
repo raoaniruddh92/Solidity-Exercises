@@ -10,6 +10,11 @@ contract Decoder {
 
     function decodeData(
         bytes memory _data
-    ) public pure returns (string memory, uint256) {}
+    ) public pure returns (string memory, uint256) {
+        uint x;
+        string memory y;
+        (y,x)=abi.decode(_data,(string, uint256));
+        return (y,x);
+    }
 }
 
