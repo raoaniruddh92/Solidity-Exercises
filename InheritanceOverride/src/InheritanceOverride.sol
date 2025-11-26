@@ -9,12 +9,7 @@ contract Number {
 }
 
 contract InheritanceOverride is Number {
-    /*
-        This exercise assumes you know how overriding a function works.
-        1. Override `getNumber` function in the parent contract.
-        2. `getNumber` function should return uint 10.
-    */
-    
-    // prettier-ignore
-    // your code here
+    function getNumber() public  override view virtual returns (uint256) {
+        return 10;
+    }
 }
