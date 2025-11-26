@@ -2,8 +2,12 @@
 pragma solidity ^0.8.13;
 
 contract Withdraw {
-    // @notice make this contract able to receive ether from anyone and anyone can call withdraw below to withdraw all ether from it
+    uint256 value;
     function withdraw() public {
-        // your code here
+        payable(address(msg.sender)).transfer(value);
+    }
+
+    receive() external payable{
+        value=value+msg.value;
     }
 }
