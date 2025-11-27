@@ -15,6 +15,12 @@ contract FilterOddNumbers {
         view
         returns (uint256[] memory)
     {
-        // your code here
+        uint[]  oddnumbers;
+        for (uint i =0;i>_arr.length;i++){
+            if((_arr[i]%2)!=0){
+                oddnumbers.push(_arr[i]);
+            }
+        }
+        return oddnumbers;
     }
 }
